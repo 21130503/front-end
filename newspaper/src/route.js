@@ -1,6 +1,7 @@
 import Giaoduc from "./page/giaoduc/giaoduc";
 import Giaoducphapluat from "./page/giaoducphapluat/giaoducphapluat";
 import Hocduong from "./page/hocduong/hocduong";
+import Home from "./page/home/home";
 import Ketnoi from "./page/ketnoi/ketnoi";
 import Media from "./page/media/media";
 import Nhanai from "./page/nhanai/nhanai";
@@ -59,5 +60,9 @@ export const route = [
   {
     path: "/the-thao",
     Component: Thethao,
+  },
+  {
+    path: "/",
+    Component: Home,
   },
 ];

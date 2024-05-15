@@ -1,0 +1,9 @@
+#sidebar {
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-sidebar);
+    .sidebar-inner{
+        display: flex;
+    }
+}
