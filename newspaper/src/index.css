@@ -20,6 +20,9 @@ body {
 .w-1200 {
   width: 1200px;
 }
+.w-3500 {
+  width: 3500px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
