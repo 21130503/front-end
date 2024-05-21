@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import HotEvent from "../../component/hot-event/hot-event";
-
 function Home() {
     return ( 
         <div className="w-full">
