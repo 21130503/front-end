@@ -2,6 +2,9 @@ import "./header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import logo from "C:/Learn/LTFE/project_ck/front-end/newspaper/src/img/header/logo_gdtd.jpg";
+import logo_center from "C:/Learn/LTFE/project_ck/front-end/newspaper/src/img/header/logo_xdlng.png";
 
 function Header() {
   return (
@@ -34,6 +37,25 @@ function Header() {
             <div className="container">
               <p>gdtddientu@gmail.com</p>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="header_container py-3">
+        <div className="logo_left">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className="logo_center">
+          <img src={logo_center} alt="Logo" />
+        </div>
+        <div className="logo_right">
+          <div className="search">
+            <input type="text" className="search_ip" />
+            <div className="icon">
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
+          </div>
+          <div className="image">
+            <img src={logo} alt="Logo" />
           </div>
         </div>
       </div>

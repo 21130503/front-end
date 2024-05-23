@@ -75,5 +75,58 @@
         }
     }
 
+    .header_container {
+        display: flex;
+        height: 96px;
+
+        .logo_left {
+            width: 180px;
+            margin-left: 12vw;
+            cursor: pointer;
+        }
+
+        .logo_center {
+            margin-left: 50px;
+            width: 500px;
+            cursor: pointer;
+        }
+
+        .logo_right {
+            display: flex;
+            align-items: flex-end;
+
+            .search {
+                display: flex;
+                margin-left: 74px;
+
+                .search_ip {
+                    border: 1px solid #727272;
+                    background-color: #f5f5f5;
+                    border-radius: 20px;
+                    height: 40px;
+                    width: 216px;
+                    font-size: 16px;
+                    padding-left: 10px;
+                }
+
+                .search_ip:focus {
+                    border-color: #c31e40;
+                    outline: none;
+                }
+
+                .icon {
+                    color: #c31e40;
+                    margin-left: -30px;
+                    margin-top: 6px;
+                }
+            }
+
+            .image {
+                margin-left: 40px;
+                width: 100px;
+                cursor: pointer;
+            }
+        }
+    }
 
 }
