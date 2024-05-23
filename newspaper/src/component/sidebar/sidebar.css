@@ -1,0 +1,8 @@
+#sidebar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-sidebar);
+}
+#sidebar .sidebar-inner {
+  display: flex;
+}/*# sourceMappingURL=sidebar.css.map */
