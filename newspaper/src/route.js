@@ -1,8 +1,12 @@
+import Anninh from "./page/anninh/anninh";
+import Bandocdieutra from "./page/bandocdieutra/bandocdieutra";
 import BonPhuong from "./page/bonphuong/bonphuong";
 import Chinhsach from "./page/chinhsach/chinhsach";
 import ChinhTri from "./page/chinhtri/chinhtri";
 import Chuyendong from "./page/chuyendong/chuyendong";
+import Congdoan from "./page/congdoan/congdoan";
 import DiaPhuong from "./page/diaphuong/diaphuong";
+import Donghanh from "./page/donghanh/donghanh";
 import DaoTaoTuyenSinh from "./page/dt-ts/dt-ts";
 import Giaoduc from "./page/giaoduc/giaoduc";
 import Giaoducdothi from "./page/giaoducdothi/giaoducdothi";
@@ -10,9 +14,11 @@ import Giaoducphapluat from "./page/giaoducphapluat/giaoducphapluat";
 import Hocduong from "./page/hocduong/hocduong";
 import Home from "./page/home/home";
 import Ketnoi from "./page/ketnoi/ketnoi";
+import Khoahoccongnghe from "./page/khoahoccongnghe/conghocongnghe";
 import KinhTe from "./page/kinhte/kinhte";
 import Media from "./page/media/media";
 import Nhanai from "./page/nhanai/nhanai";
+import Phapdinh from "./page/phapdinh/phapdinh";
 import Suckhoe from "./page/suckhoe/suckhoe";
 import Thegioi from "./page/thegioi/thegioi";
 import Thethao from "./page/thethao/thethao";
@@ -35,10 +41,12 @@ export const route = [
   {
     path: "/giao-duc-phap-luat",
     Component: Giaoducphapluat,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fphap-luat-phap-luat-8.rss",
   },
   {
     path: "/ket-noi",
     Component: Ketnoi,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fket-noi-2.rss",
   },
   {
     path: "/trao-doi",
@@ -75,7 +83,7 @@ export const route = [
   {
     path: "/",
     Component: Home,
-    rss: "https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss&minify=on",
+    rss: "https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss",
   },
   {
     path: "/chinh-sach",
@@ -122,5 +130,35 @@ export const route = [
     path: "/kinh-te",
     Component: KinhTe,
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fkinh-te-38.rss",
+  },
+  {
+    path: "/an-ninh",
+    Component: Anninh,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fan-ninh-25.rss",
+  },
+  {
+    path: "/phap-dinh",
+    Component: Phapdinh,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fphap-dinh-83.rss",
+  },
+  {
+    path: "/goc-nhin",
+    Component: Bandocdieutra,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fgoc-nhin-53.rss",
+  },
+  {
+    path: "/cong-doan",
+    Component: Congdoan,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fcong-doan-74.rss",
+  },
+  {
+    path: "/dong-hanh",
+    Component: Donghanh,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fdong-hanh-88.rss",
+  },
+  {
+    path: "/khoa-hoc",
+    Component: Khoahoccongnghe,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fkhoa-hoc-36.rss",
   },
 ];
