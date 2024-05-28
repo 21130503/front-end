@@ -9,6 +9,7 @@ function App() {
         {route.map((comp, index) => {
           let Layout = DefaultLayout;
           let Page = comp.Component;
+          let rss = null;
           if (comp.layout) {
             Layout = comp.layout;
           } else if (comp.layout === null) {
@@ -20,7 +21,7 @@ function App() {
               path={comp.path}
               element={
                 <Layout>
-                  <Page />
+                  <Page rss={comp.rss ? comp.rss : null} />
                 </Layout>
               }
             />

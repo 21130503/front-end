@@ -236,7 +236,7 @@ function SideBar() {
             <div className="sidebar-inner flex justify-between w-1200 mx-auto">
               {
                 sidebar.map((item, index)=>{
-                  return <SidebarItem sidebar={item} className={'px-2 py-3 font-medium hover:text-amber-400'}/>
+                  return <SidebarItem key={index} sidebar={item} className={'px-2 py-3 font-medium hover:text-amber-400'}/>
                 })
               }
             </div>
