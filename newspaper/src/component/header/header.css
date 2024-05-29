@@ -1,0 +1,105 @@
+#header .header_top {
+  display: flex;
+  justify-items: flex-start;
+  width: 100%;
+  align-items: center;
+  padding-left: 12vw;
+  background-color: #f5f5f5;
+  height: 36px;
+}
+#header .header_top .time {
+  font-size: 12px;
+  width: 170px;
+}
+#header .header_top .phone {
+  display: flex;
+  font-size: 12px;
+  width: 230px;
+  align-items: center;
+}
+#header .header_top .phone .phone_icon {
+  width: 20px;
+  height: 20px;
+  padding-left: 4px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+#header .header_top .phone .phone_container {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+#header .header_top .phone .phone_container .title {
+  width: 100px;
+}
+#header .header_top .phone .phone_container .container {
+  width: 100px;
+  font-size: 14px;
+  color: #c31e40;
+}
+#header .header_top .email {
+  display: flex;
+  font-size: 12px;
+  width: 200px;
+}
+#header .header_top .email .email_icon {
+  width: 20px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding-left: 2px;
+}
+#header .header_top .email .email_container {
+  display: flex;
+}
+#header .header_top .email .email_container .title {
+  width: 40px;
+}
+#header .header_top .email .email_container .container {
+  color: #0d6efd;
+  cursor: pointer;
+}
+#header .header_container {
+  display: flex;
+  height: 96px;
+}
+#header .header_container .logo_left {
+  width: 180px;
+  margin-left: 12vw;
+  cursor: pointer;
+}
+#header .header_container .logo_center {
+  margin-left: 50px;
+  width: 500px;
+  cursor: pointer;
+}
+#header .header_container .logo_right {
+  display: flex;
+  align-items: flex-end;
+}
+#header .header_container .logo_right .search {
+  display: flex;
+  margin-left: 74px;
+}
+#header .header_container .logo_right .search .search_ip {
+  border: 1px solid #727272;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  height: 40px;
+  width: 216px;
+  font-size: 16px;
+  padding-left: 10px;
+}
+#header .header_container .logo_right .search .search_ip:focus {
+  border-color: #c31e40;
+  outline: none;
+}
+#header .header_container .logo_right .search .icon {
+  color: #c31e40;
+  margin-left: -30px;
+  margin-top: 6px;
+}
+#header .header_container .logo_right .image {
+  margin-left: 40px;
+  width: 100px;
+  cursor: pointer;
+}/*# sourceMappingURL=header.css.map */
