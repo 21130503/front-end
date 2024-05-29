@@ -83,7 +83,7 @@ export const route = [
   {
     path: "/",
     Component: Home,
-    rss: "https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss",
   },
   {
     path: "/chinh-sach",

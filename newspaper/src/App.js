@@ -21,7 +21,7 @@ function App() {
               path={comp.path}
               element={
                 <Layout>
-                  <Page rss={comp.rss ? comp.rss : null} />
+                  <Page rss={comp.rss} />
                 </Layout>
               }
             />

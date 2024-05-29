@@ -1,22 +1,36 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hook/fetch";
+import HotEvent from "../../component/hot-event/hot-event";
+import Story from "../../component/story/story";
+import ContentItem from "../../component/content/contentItem";
 
 function ChinhTri({rss}) {
     const data = useFetch(rss)
+    const fistItem = data?.items?.shift()
     console.log(data);
     return ( 
-        <div>
-            {
-                data.map((item, index)=>{
-                    return (
-                        <div key={index}>
-                            {/* <div con></div> */}
-                        </div>
-                    )
-                })
-            }
+       <div className="wrapper w-1200 mx-auto">
+        <div className="hot-event w-full">
+            <HotEvent className={'w-1200 mx-auto'}/>
         </div>
+            <div className="grid grid-cols-12 gap-4 h-screen mt-6">
+                
+                <div className="col-span-6">
+                    <Story news={fistItem}/>
+                   <div className="content-list">
+                        {
+                            data?.items?.map((item, index)=>{
+                                return (
+                                    <ContentItem key={index}/>
+                                )
+                            })
+                        }
+                   </div>
+                </div>
+                <div className="col-span-6">Item 2</div>
+            </div>
+       </div>
      );
 }
 
