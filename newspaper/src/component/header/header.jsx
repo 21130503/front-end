@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import logo from "C:/Learn/LTFE/project_ck/front-end/newspaper/src/img/header/logo_gdtd.jpg";
-import logo_center from "C:/Learn/LTFE/project_ck/front-end/newspaper/src/img/header/logo_xdlng.png";
+import logo from "../../img/header/logo_gdtd.jpg";
+import logo_center from "../../img/header/logo_xdlng.png";
 
 function Header() {
   return (
