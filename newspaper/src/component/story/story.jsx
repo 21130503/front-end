@@ -1,24 +1,20 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-var imgRegex = /<img[^>]+src="?([^"\s]+)"?[^>]*\/?>/g;
-var linkRegex = /<a[^>]+href="?([^"\s]+)"?[^>]*>/;
-
-function Story({news}) {
-    const [src , setSrc] = useState('')
-    const [link , setLink ] = useState('')
-    useEffect(()=>{
-        const match = imgRegex.exec(news?.content)
-        setSrc(match[1])
-        // setLink(linkRegex.exec(news?.content))
-        // console.log(linkRegex.exec(news?.content));
-    },[])
+import { selectImageStory, selectLinkStory } from "../../redux/storyStore";
+import useStory from "../../store/story-store";
+function Story({}) {
+    // const imageStory = useSelector(selectImageStory)
+    // const linkStory = useSelector(selectLinkStory)
+    const {imageStory, linkStory, title} = useStory()
+    console.log(imageStory);
     return ( 
         <div className="story">
-           <Link className="cursor-pointer">
+           <Link className="cursor-pointer" to={linkStory}>
                 <div className="main-content">
-                    <img src={src} alt="" />
+                    <img src={imageStory} alt="abnc" />
                 </div>
-                <h1 className="text-2xl font-semibold my-3 hover:text-red-400 hover:transition-all">{news?.title}</h1>
+                <h1 className="text-xl font-semibold my-3 hover:text-red-400 hover:transition-all">{title}</h1>
            </Link>
         </div>
      );
