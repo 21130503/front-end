@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { selectImageStory, selectLinkStory } from "../../redux/storyStore";
 import useStory from "../../store/story-store";
 function Story({}) {
-    // const imageStory = useSelector(selectImageStory)
-    // const linkStory = useSelector(selectLinkStory)
     const {imageStory, linkStory, title} = useStory()
     console.log(imageStory);
     return ( 

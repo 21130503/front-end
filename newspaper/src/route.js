@@ -84,12 +84,12 @@ export const route = [
   {
     path: "/",
     Component: Home,
-    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fhome.rss&api_key=bpvuiptcb4x9b8nfxmwjjojxe3toucwqfsdyanra",
   },
   {
     path: "/chinh-sach",
     Component: Chinhsach,
-    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fchinh-sach-27.rss",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fchinh-sach-27.rss&api_key=bpvuiptcb4x9b8nfxmwjjojxe3toucwqfsdyanra",
   },
   {
     path: "/dia-phuong",

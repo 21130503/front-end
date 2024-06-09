@@ -4,7 +4,7 @@ const useStory = create((set) => ({
   imageStory: "ac",
   linkStory: "",
   title: "",
-  setData(news) {
+  async setData(news) {
     console.log(news);
     set((state) => ({
       imageStory: imgRegex.exec(news?.content)?.[1],
