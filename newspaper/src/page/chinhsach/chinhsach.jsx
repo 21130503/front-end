@@ -26,7 +26,8 @@ function Chinhsach({rss}) {
                         }
                    </div>
                 </div>
-                <div className="col-span-6">Item 2</div>
+                <div className="col-span-2">Item 2</div>
+                <div className="col-span-4">Item 2</div>
             </div>
        </div>
      );
