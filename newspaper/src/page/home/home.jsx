@@ -2,36 +2,35 @@ import { useEffect, useState } from "react";
 import HotEvent from "../../component/hot-event/hot-event";
 import { useFetch } from "../../hook/fetch";
 import axios from "axios";
+import Story from "../../component/story/story";
+import ContentItem from "../../component/content/contentItem";
  function Home({rss}) {
-   const [data, setData] = useState([]);
-   const loadData = async ()=>{
-      const {data} = await axios.get('/json/home.json')
-      setData(data.rss.channel.item)
-      console.log(data);
-   }
-   useEffect(()=>{
-      loadData()
-   }, [])
+   const data = useFetch(rss)
    console.log(data);
-    return ( 
-        <div>
-           <div className="w-full">
-              <HotEvent className={'w-1200 mx-auto'}/>
+   // const fistItem = data?.items?.shift(
+   return ( 
+      <div className="wrapper w-1200 mx-auto">
+       <div className="hot-event w-full">
+           <HotEvent className={'w-1200 mx-auto'}/>
+       </div>
+           <div className="grid grid-cols-12 gap-4 h-screen mt-6">
+               
+               <div className="col-span-6">
+                   <Story/>
+                  <div className="content-list">
+                       {
+                           data?.items?.map((item, index)=>{
+                               return (
+                                   <ContentItem key={index} item={item}/>
+                               )
+                           })
+                       }
+                  </div>
+               </div>
+               <div className="col-span-6">Item 2</div>
            </div>
-           <div className="inner my-5">
-               {
-                  data?.map((item, index) =>{
-                     return (
-                        <div key={index}>
-                           <div dangerouslySetInnerHTML={{ __html: item.description}}></div>
-                           <div>{item.title}</div>
-                        </div>
-                     )
-                  })
-               }
-              </div>
-        </div>
-     );
+      </div>
+    );
 }
 
 export default Home;

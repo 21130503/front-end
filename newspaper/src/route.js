@@ -51,6 +51,7 @@ export const route = [
   {
     path: "/trao-doi",
     Component: Traodoi,
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Ftrao-doi-3.rss",
   },
   {
     path: "/hoc-duong",
