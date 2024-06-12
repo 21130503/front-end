@@ -27,7 +27,7 @@ function Chinhsach({rss}) {
                         }
                    </div>
                 </div>
-                <div className="col-span-3">
+                <div className="col-span-2">
                     <NewsHot />
                 </div>
                 <div className="col-span-3">Item 2</div>
