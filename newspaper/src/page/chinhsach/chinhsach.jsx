@@ -1,5 +1,6 @@
 import ContentItem from "../../component/content/contentItem";
 import HotEvent from "../../component/hot-event/hot-event";
+import NewsHot from "../../component/newshot/newshot";
 import Story from "../../component/story/story";
 import { useFetch } from "../../hook/fetch";
 
@@ -20,14 +21,16 @@ function Chinhsach({rss}) {
                         {
                             data?.items?.map((item, index)=>{
                                 return (
-                                    <ContentItem key={index} item={item}/>
+                                    <ContentItem  key={index} item={item}/>
                                 )
                             })
                         }
                    </div>
                 </div>
-                <div className="col-span-2">Item 2</div>
-                <div className="col-span-4">Item 2</div>
+                <div className="col-span-3">
+                    <NewsHot />
+                </div>
+                <div className="col-span-3">Item 2</div>
             </div>
        </div>
      );

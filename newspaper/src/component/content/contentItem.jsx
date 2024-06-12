@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { timeAgo } from "../../utils/time";
 
-function ContentItem({item}) {
+function ContentItem({item, display = 'flex', showTitle= true, w='100%', h='100%'}) {
     const img = imgRegex.exec(item?.content)?.[1]
     const link = linkRegex.exec(item?.content)?.[1]
     const title = item?.title
@@ -29,13 +29,13 @@ function ContentItem({item}) {
     }, [item]);
 
     return ( 
-        <div className="content-item flex gap-2 w-full mt-14  mb-4">
+        <div className="content-item  gap-2 w-full mt-14  mb-4" style={{display: display}}>
             <Link to={link} className="left block w-64 object-cover h-40" >
-                <img src={img} className="w-full h-full" alt="" />
+                <img src={img} style={{width : w , height: h}} alt="" />
             </Link>
             <div className="right ml-5 flex-1">
                 <Link to={link}>
-                <h1 className="title text-base font-semibold flex-1 w-full">{title}</h1>
+                {showTitle && <h1 className="title text-base font-semibold flex-1 w-full">{title}</h1>}
                 <span className="time">{time}</span>
                 <div className="text-content mt-2 text-base">
                     {textContent}
