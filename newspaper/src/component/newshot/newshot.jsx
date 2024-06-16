@@ -3,10 +3,9 @@ import ContentItem from '../content/contentItem';
 import './newshot.scss'
 function NewsHot() {
     const {array} = arrayNewsHot()
-    console.log(array);
     return ( 
         <div className="news-hot w-full">
-            <h1 className="title_news-hot text-xl font-bold py-2">Tin tiêu điểm</h1>
+            <h1 className="title_news-hot text-xl font-bold py-2 pl-2">Tin tiêu điểm</h1>
             <div className="content_news-hot mt-6">
                 {
                     array.map((item, key)=>{

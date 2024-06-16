@@ -5,6 +5,7 @@ import Chinhsach from "./page/chinhsach/chinhsach";
 import ChinhTri from "./page/chinhtri/chinhtri";
 import Chuyendong from "./page/chuyendong/chuyendong";
 import Congdoan from "./page/congdoan/congdoan";
+import NewsDetail from "./page/detail/detail";
 import DiaPhuong from "./page/diaphuong/diaphuong";
 import Donghanh from "./page/donghanh/donghanh";
 import DaoTaoTuyenSinh from "./page/dt-ts/dt-ts";
@@ -161,5 +162,9 @@ export const route = [
     path: "/khoa-hoc",
     Component: Khoahoccongnghe,
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fkhoa-hoc-36.rss",
+  },
+  {
+    path: "/chi-tiet",
+    Component: NewsDetail,
   },
 ];

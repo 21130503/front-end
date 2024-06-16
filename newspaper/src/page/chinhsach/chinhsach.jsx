@@ -1,13 +1,15 @@
+import { useEffect } from "react";
 import ContentItem from "../../component/content/contentItem";
 import HotEvent from "../../component/hot-event/hot-event";
 import NewsHot from "../../component/newshot/newshot";
 import Story from "../../component/story/story";
 import { useFetch } from "../../hook/fetch";
+import useLoadMoreData from "../../store/useLoadMoreData";
 
 function Chinhsach({rss}) {
     const data = useFetch(rss)
-    console.log(data);
-    // const fistItem = data?.items?.shift(
+    const { dataShow} = useLoadMoreData()
+    console.log(dataShow);
     return ( 
        <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">

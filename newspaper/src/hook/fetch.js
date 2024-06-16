@@ -2,12 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useStory from "../store/story-store";
 import arrayNewsHot from "../store/newshot";
+import useLoadMoreData from "../store/useLoadMoreData";
 
 export function useFetch(rss) {
   const [json, setJson] = useState(null);
   const [flag, setFlag] = useState(false);
   const { setData } = useStory();
   const { setArray } = arrayNewsHot();
+  const { setDataInLoadMore, setDataShow } = useLoadMoreData();
+  // console.log(typeof setDataInLoadMore);
   const newsHot = [];
   const loadData = async () => {
     const { data } = await axios.get(rss);
@@ -19,6 +22,8 @@ export function useFetch(rss) {
     }
     console.log(newsHot);
     await setArray(newsHot);
+    await setDataInLoadMore(data.items);
+    await setDataShow();
   };
   window.onload = () => {
     if (!flag) {
