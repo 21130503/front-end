@@ -4,20 +4,19 @@ import { imgRegex, linkRegex } from "../../utils/regex";
 import { useEffect } from "react";
 import { useState } from "react";
 import { timeAgo } from "../../utils/time";
+import { useNews } from "../../store/news";
 
-function ContentItem({item}) {
+function ContentItem({ item, display = 'flex', showTitle= true, w='220px', h='140px',ml_content = 'ml-5', showTime= true}) {
     const img = imgRegex.exec(item?.content)?.[1]
     const link = linkRegex.exec(item?.content)?.[1]
     const title = item?.title
     const time = timeAgo(new Date(item?.pubDate))
     const [textContent, setTextContent] = useState("");
+    const {setNews} = useNews()
     useEffect(() => {
         const extractTextFromHtml = (html) => {
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
-            // var textContent = tempDiv.textContent || tempDiv.innerText || '';
-            // textContent = textContent.replace(/\n\s*\n/g, '\n').trim();
-            // return textContent;
             var firstParagraph = tempDiv.childNodes[2].textContent.trim();
             return firstParagraph;
         };
@@ -27,21 +26,23 @@ function ContentItem({item}) {
             setTextContent(text);
         }
     }, [item]);
+    const handleClick = ()=>{
+        localStorage.setItem("news", JSON.stringify(item))
+    }
 
     return ( 
-        <div className="content-item flex gap-2 w-full mt-14  mb-4">
-            <Link to={link} className="left block w-64 object-cover h-40" >
-                <img src={img} className="w-full h-full" alt="" />
-            </Link>
-            <div className="right ml-5 flex-1">
-                <Link to={link}>
-                <h1 className="title text-base font-semibold flex-1 w-full">{title}</h1>
-                <span className="time">{time}</span>
-                <div className="text-content mt-2 text-base">
-                    {textContent}
+        <div onClick={handleClick} className="content-item  gap-2 w-full mt-4  mb-4" style={{display: display}}>
+            <Link to={"/chi-tiet"} className="left  w-full object-cover"  style={{display: display}}>
+                <img src={img} style={{width : w , height: h}} alt="" />
+    
+                <div className= {`${ml_content} right flex-1`}>
+                    {showTitle && <h1 className="title text-base font-semibold flex-1 w-full">{title}</h1>}
+                    {showTime && <span className="time">{time}</span>}
+                    <div className="text-content mt-2 text-base">
+                        {textContent}
+                    </div>
                 </div>
-                </Link>
-            </div>
+            </Link>
         </div>
      );
 }

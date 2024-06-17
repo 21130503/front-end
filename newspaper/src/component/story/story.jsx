@@ -5,7 +5,6 @@ import { selectImageStory, selectLinkStory } from "../../redux/storyStore";
 import useStory from "../../store/story-store";
 function Story({}) {
     const {imageStory, linkStory, title} = useStory()
-    console.log(imageStory);
     return ( 
         <div className="story">
            <Link className="cursor-pointer" to={linkStory}>

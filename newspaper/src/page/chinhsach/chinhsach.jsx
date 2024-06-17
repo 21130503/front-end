@@ -1,12 +1,15 @@
+import { useEffect } from "react";
 import ContentItem from "../../component/content/contentItem";
 import HotEvent from "../../component/hot-event/hot-event";
+import NewsHot from "../../component/newshot/newshot";
 import Story from "../../component/story/story";
 import { useFetch } from "../../hook/fetch";
+import useLoadMoreData from "../../store/useLoadMoreData";
 
 function Chinhsach({rss}) {
     const data = useFetch(rss)
-    console.log(data);
-    // const fistItem = data?.items?.shift(
+    const { dataShow} = useLoadMoreData()
+    console.log(dataShow);
     return ( 
        <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -20,14 +23,16 @@ function Chinhsach({rss}) {
                         {
                             data?.items?.map((item, index)=>{
                                 return (
-                                    <ContentItem key={index} item={item}/>
+                                    <ContentItem  key={index} item={item}/>
                                 )
                             })
                         }
                    </div>
                 </div>
-                <div className="col-span-2">Item 2</div>
-                <div className="col-span-4">Item 2</div>
+                <div className="col-span-2">
+                    <NewsHot />
+                </div>
+                <div className="col-span-3">Item 2</div>
             </div>
        </div>
      );
