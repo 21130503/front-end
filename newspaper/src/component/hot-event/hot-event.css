@@ -1,0 +1,6 @@
+.hot-event .left, .hot-event .right {
+  color: var(--bg-sidebar);
+}
+.hot-event .transition-transform {
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=hot-event.css.map */

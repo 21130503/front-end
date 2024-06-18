@@ -2,17 +2,53 @@ import { useEffect, useState } from "react";
 import { useNews } from "../../store/news";
 import HotEvent from "../../component/hot-event/hot-event";
 import './detail.scss'
+import axios from "axios";
+import { imgRegex } from "../../utils/regex";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
     const [newsContent, setNewsContent] = useState('')
+    const [image, setImage] = useState('')
+
+    // useEffect(() => {
+        
+    //     // const mainTextMatch = news?.content.match(/<a href=.*?>.*?<\/a>(.*?)<div>/s);
+    //     // const mainText = mainTextMatch ? mainTextMatch[1].trim() : "";
+    //     // setNewsContent(news?.content.replace(/<a href=".*?">(.*?)<\/a>/g, '<p>$1</p>'))
+    // }, []);
     useEffect(() => {
-        setNews(JSON.parse(localStorage.getItem('news')))
-        const mainTextMatch = news?.content.match(/<a href=.*?>.*?<\/a>(.*?)<div>/s);
-        const mainText = mainTextMatch ? mainTextMatch[1].trim() : "";
-        setNewsContent(news?.content.replace(/<a href=".*?">(.*?)<\/a>/g, '<p>$1</p>'))
+        const loadNews = async () => {
+            const storedNews = JSON.parse(localStorage.getItem('news'));
+            setNews(storedNews);
+        };
+
+        loadNews();
     }, []);
-    console.log(news);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            if (news && news.link) {
+                try {
+                    const { data } = await axios.post(
+                        "http://localhost:5000/get_article",
+                        JSON.stringify({ url: news.link }),
+                        {
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        }
+                    );
+                    console.log(data);
+                    setNewsContent(data.content);
+                } catch (error) {
+                    console.error('Error fetching article:', error);
+                }
+            }
+        };
+
+        fetchData();
+        setImage(imgRegex.exec(news?.content)?.[1])
+    }, [news]);
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -32,8 +68,11 @@ function NewsDetail() {
             <div className="news-speak">
                 
             </div>
-            <div dangerouslySetInnerHTML={{__html: news?.content}} className="news-main">
-
+            <div className="image-news my-4">
+                <img src={image} alt="" />
+            </div>
+            <div className="news-main text-xl" dangerouslySetInnerHTML={{__html: newsContent}}>
+                
             </div>
         </div>
         </div>
