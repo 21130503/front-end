@@ -4,6 +4,7 @@ import HotEvent from "../../component/hot-event/hot-event";
 import './detail.scss'
 import axios from "axios";
 import { imgRegex } from "../../utils/regex";
+import Share from "../../component/share/share";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
@@ -72,7 +73,11 @@ function NewsDetail() {
                 <img src={image} alt="" />
             </div>
             <div className="news-main text-xl" dangerouslySetInnerHTML={{__html: newsContent}}>
-                
+            </div>
+            <div className="mt-5">
+                <div className="share">
+                    <Share link={news?.link}/>
+                </div>
             </div>
         </div>
         </div>
