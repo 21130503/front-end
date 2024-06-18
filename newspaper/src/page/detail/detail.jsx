@@ -5,6 +5,7 @@ import './detail.scss'
 import axios from "axios";
 import { imgRegex } from "../../utils/regex";
 import Share from "../../component/share/share";
+import Comment from "../../component/comment/comment";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
@@ -75,8 +76,11 @@ function NewsDetail() {
             <div className="news-main text-xl" dangerouslySetInnerHTML={{__html: newsContent}}>
             </div>
             <div className="mt-5">
-                <div className="share">
+                <div className="news-share">
                     <Share link={news?.link}/>
+                </div>
+                <div className="news-comment">
+                    <Comment/>
                 </div>
             </div>
         </div>

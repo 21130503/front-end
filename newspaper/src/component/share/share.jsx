@@ -17,7 +17,7 @@ function Share({link}) {
           }
     }
     return ( 
-        <div className="share bg-slate-200 flex w-64 p-4">
+        <div className="share bg-slate-200 my-7 flex w-64 p-4">
             <h1 className="share-title text-2xl font-bold  text-slate-700">Chia sẻ</h1>
             <ul className="flex items-center gap-5 justify-center flex-1">
                 <li className="share-facebook cursor-pointer">
