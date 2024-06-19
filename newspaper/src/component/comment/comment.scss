@@ -1,0 +1,18 @@
+.comment{
+    .comment-title {
+
+    }
+    .box-cmt {
+        border:  1px solid #c1c1c1;
+        border-radius: 1px;
+        textarea{
+            outline: none;
+        }
+    }
+    .submit {
+        button {
+            background-color: #c31e40;
+            border-radius: 3px
+        }
+    }
+}
