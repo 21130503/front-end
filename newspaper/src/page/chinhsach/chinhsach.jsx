@@ -10,6 +10,9 @@ function Chinhsach({rss}) {
     const data = useFetch(rss)
     const { dataShow} = useLoadMoreData()
     console.log(dataShow);
+    useEffect(()=>{
+        localStorage.setItem("rss",JSON.stringify(rss))
+    },[])
     return ( 
        <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -32,7 +35,7 @@ function Chinhsach({rss}) {
                 <div className="col-span-2">
                     <NewsHot />
                 </div>
-                <div className="col-span-3">Item 2</div>
+                {/* <div className="col-span-3">Item 2</div> */}
             </div>
        </div>
      );
