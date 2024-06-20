@@ -8,14 +8,18 @@ import Share from "../../component/share/share";
 import Comment from "../../component/comment/comment";
 import SameCategory from "../../component/SameCategory/SameCategory";
 import Audio from "../../component/audio/audio";
+import { useFetch } from "../../hook/fetch";
+import arrayNewsHot from "../../store/newshot";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
     const [newsContent, setNewsContent] = useState('')
     const [image, setImage] = useState('')
+    const [rss , setRss] = useState(null)
     useEffect(() => {
         const loadNews = async () => {
             const storedNews = JSON.parse(localStorage.getItem('news'));
+            setRss(JSON.parse(localStorage.getItem('rss')))
             setNews(storedNews);
         };
 
@@ -46,6 +50,8 @@ function NewsDetail() {
         fetchData();
         setImage(imgRegex.exec(news?.content)?.[1])
     }, [news]);
+    useFetch(rss)
+    const {array} = arrayNewsHot()
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -78,7 +84,7 @@ function NewsDetail() {
                     <Comment/>
                 </div>
                 <div className="news-same-category">
-                    <SameCategory/>
+                    <SameCategory array={array}/>
                 </div>
             </div>
         </div>

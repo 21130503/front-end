@@ -25,12 +25,15 @@ export function useFetch(rss) {
     await setDataInLoadMore(data.items);
     await setDataShow();
   };
-  window.onload = () => {
-    if (!flag) {
-      loadData();
-      setFlag(true);
-    }
-  };
+  useEffect(() => {
+    const load = () => {
+      if (!flag) {
+        loadData();
+        setFlag(true);
+      }
+    };
+    load();
+  }, []);
 
   return json;
 }

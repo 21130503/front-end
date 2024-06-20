@@ -1,4 +1,24 @@
 .same-category {
-    height: 365px;
+    overflow-y: hidden;
+    height: 380px;
     background-image: linear-gradient(0deg,#5b2732, #883143,#bd2041);
+    .top{
+        display: flex;
+        width: 100%;
+        .swiper-pagination{
+            .bullet {
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: #921c35;
+                &.active{
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .body{
+        width: 1485px;
+       
+    }
 }
