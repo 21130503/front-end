@@ -21,12 +21,23 @@ function SubMain({route, type='default'}) {
     return ( 
         <div className="grid grid-cols-12 submain">
             <div className="col-span-6">
-                <ContentItem item={main}/>
+                <ContentItem item={main} display="block" w="560px" h="315px" ml_content="0"/>
             </div>
-            <div className="col-span-6">
+            <div className="col-span-6 flex gap-5 flex-wrap ">
                 {
                     sub.map((item, i)=>{
-                        return <ContentItem key={i} item={item}/>
+                        return (
+                            <div key={i}  style={{ flexBasis: '268px' }}>
+                                <ContentItem item={item} 
+                                    showDescription={false}
+                                    showTime={false}
+                                    display="block"
+                                    h="180px"
+                                    w="268px"
+                                    ml_content="0"
+                                    />
+                            </div>
+                        )
                     })
                 }
             </div>
