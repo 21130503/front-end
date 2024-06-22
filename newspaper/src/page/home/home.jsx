@@ -6,6 +6,8 @@ import Story from "../../component/story/story";
 import ContentItem from "../../component/content/contentItem";
 import { images } from "../../img";
 import arrayNewsHot from "../../store/newshot";
+import SubMain from "../../component/submain/submain";
+import { route } from "../../route";
  function Home({rss}) {
    const data = useFetch(rss)
    const {array} = arrayNewsHot()
@@ -43,6 +45,9 @@ import arrayNewsHot from "../../store/newshot";
                 />
             })
         }
+        </div>
+        <div>
+            <SubMain route={route[3]}  />
         </div>
       </div>
     );

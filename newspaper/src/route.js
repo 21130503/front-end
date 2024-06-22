@@ -38,17 +38,20 @@ import Vanhoa from "./page/vanhoa/vanhoa";
 export const route = [
   {
     path: "/giao-duc",
+    title: "Giáo dục",
     Component: Giaoduc,
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fgiao-duc-17.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
   {
     path: "/thoi-su",
+    title: "Thời sự",
     Component: Thoisu,
     rss: " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fthoi-su-1.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
   {
     path: "/giao-duc-phap-luat",
     Component: Giaoducphapluat,
+    title: "Giáo dục pháp luật",
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fphap-luat-phap-luat-8.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
   {
