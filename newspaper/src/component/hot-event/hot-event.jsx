@@ -60,7 +60,7 @@ function HotEvent({className}) {
         return () => clearInterval(containerRef.current);
     }, []);
     return ( 
-        <div className= {`${className} hot-event flex mt-3 items-center` }>
+        <div className= {`${className} hot-event flex mt-3 items-center w-full` }>
             <div className="left">
                 <h2>
                     <Link className="text-xl font-semibold">

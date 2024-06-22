@@ -1,0 +1,22 @@
+.audio {
+    background-color: #f8f9fa;
+    border:  1px solid #dee2e6;
+    .play {
+        .btn-play{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border:  1px solid #dee2e6;
+
+        }
+    }
+    .mute {
+        .btn-mute{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border:  1px solid #dee2e6;
+
+        }
+    }
+}

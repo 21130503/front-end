@@ -6,21 +6,20 @@ import axios from "axios";
 import { imgRegex } from "../../utils/regex";
 import Share from "../../component/share/share";
 import Comment from "../../component/comment/comment";
+import SameCategory from "../../component/SameCategory/SameCategory";
+import Audio from "../../component/audio/audio";
+import { useFetch } from "../../hook/fetch";
+import arrayNewsHot from "../../store/newshot";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
     const [newsContent, setNewsContent] = useState('')
     const [image, setImage] = useState('')
-
-    // useEffect(() => {
-        
-    //     // const mainTextMatch = news?.content.match(/<a href=.*?>.*?<\/a>(.*?)<div>/s);
-    //     // const mainText = mainTextMatch ? mainTextMatch[1].trim() : "";
-    //     // setNewsContent(news?.content.replace(/<a href=".*?">(.*?)<\/a>/g, '<p>$1</p>'))
-    // }, []);
+    const [rss , setRss] = useState(null)
     useEffect(() => {
         const loadNews = async () => {
             const storedNews = JSON.parse(localStorage.getItem('news'));
+            setRss(JSON.parse(localStorage.getItem('rss')))
             setNews(storedNews);
         };
 
@@ -51,6 +50,8 @@ function NewsDetail() {
         fetchData();
         setImage(imgRegex.exec(news?.content)?.[1])
     }, [news]);
+    useFetch(rss)
+    const {array} = arrayNewsHot()
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -68,7 +69,7 @@ function NewsDetail() {
                 <p className="text-slate-600">{news?.pubDate}</p>
             </div>
             <div className="news-speak">
-                
+                <Audio content={ newsContent}/>
             </div>
             <div className="image-news my-4">
                 <img src={image} alt="" />
@@ -81,6 +82,9 @@ function NewsDetail() {
                 </div>
                 <div className="news-comment">
                     <Comment/>
+                </div>
+                <div className="news-same-category">
+                    <SameCategory array={array}/>
                 </div>
             </div>
         </div>
