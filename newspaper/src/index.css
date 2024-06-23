@@ -16,6 +16,7 @@ body {
 }
 :root {
   --bg-sidebar: #c31e40;
+  --primary-color: #c31e40;
 }
 .w-1200 {
   width: 1200px;

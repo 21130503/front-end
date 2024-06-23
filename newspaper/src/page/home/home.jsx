@@ -8,9 +8,11 @@ import { images } from "../../img";
 import arrayNewsHot from "../../store/newshot";
 import SubMain from "../../component/submain/submain";
 import { route } from "../../route";
+import useWeekly from "../../store/weekly-news";
  function Home({rss}) {
    const data = useFetch(rss)
    const {array} = arrayNewsHot()
+   const {arrayWeekly} = useWeekly()
    const [blog, setBlog] = useState([])
    // const fistItem = data?.items?.shift(
    return ( 
@@ -41,6 +43,8 @@ import { route } from "../../route";
                                     ml_content="0"
                                     w="270px"
                                     h="180px"
+                                    mt_content="mt-4"
+
                                     
                 />
             })
@@ -48,6 +52,10 @@ import { route } from "../../route";
         </div>
         <div>
             <SubMain route={route[3]}  />
+            <SubMain route={route[4]} type="other"  array={array}  title={"Tin tiêu điểm"}/>
+            <SubMain route={route[4]} type="other"  array={arrayWeekly}  title={"Tin điểm tuần"}/>
+
+
         </div>
       </div>
     );

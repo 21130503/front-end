@@ -14,7 +14,8 @@ function ContentItem({ item,
             ml_content = 'ml-5', 
             showTime= true, 
             showDescription = true,
-            dependence = false
+            dependence = false,
+            mt_content = 'ml-0'
 
 }) {
     const img = imgRegex.exec(item?.content)?.[1]
@@ -45,7 +46,7 @@ function ContentItem({ item,
             <Link to={"/chi-tiet"} className="left  object-cover"  style={{display: display}}>
                 <img src={img} style={{width : w , height: h}} alt="" />
     
-                <div className= {`${ml_content} right flex-1`}>
+                <div className= {`${ml_content} ${mt_content}  right flex-1`}>
                     {showTitle && <h1 style={dependence ? {width: w}: {width: "100%"}} className="title text-base font-semibold flex-1 w-full">{title}</h1>}
                     {showTime && <span className="time">{time}</span>}
                     { showDescription && <div className="text-content mt-2 text-base">
