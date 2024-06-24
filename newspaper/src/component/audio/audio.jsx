@@ -10,7 +10,7 @@ function Audio({content}) {
            setIsPlay(!isPlay)
            if(!isPlay){
             const utterance = new SpeechSynthesisUtterance(content);
-            utterance.lang = 'en-US'; // Ngôn ngữ, ví dụ: 'en-US' cho tiếng Anh Mỹ
+            utterance.lang = 'vi-VN'; // Ngôn ngữ, ví dụ: 'en-US' cho tiếng Anh Mỹ
             utterance.pitch = 1; // Cao độ giọng nói (0-2)
             utterance.rate = 1; // Tốc độ nói (0.1-10)
             utterance.volume = 1; // Âm lượng (0-1)

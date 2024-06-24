@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     background-color: var(--bg-sidebar);
+    position: sticky;
+    top: 0;
     .sidebar-inner{
         display: flex;
         .sub-menu {

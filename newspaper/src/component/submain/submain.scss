@@ -1,0 +1,23 @@
+.sub-main{
+    .top {
+        .title {
+            color: var(--primary-color);
+            top: 7px;
+        }
+        .right {
+            border-bottom: 2px solid var(--primary-color);
+        }
+    }
+    .title-news{
+        background-color: var(--primary-color);
+    }
+    .body{
+        box-shadow: 5px 5px 5px rgba(0,0,0,.1) ;
+        border: 1px solid;
+        border-color: transparent #eee;
+         .item:not(:first-child) {
+            border-top:1px solid #eee ;
+
+         }
+    }
+}
