@@ -11,7 +11,6 @@ function SubMain({route, type='default', title, array}) {
     const [main,setMain] = useState(null);
     const [sub, setSub] = useState([]);
     const [children , setChildren] = useState([])
-    console.log(route.rss);
     useEffect(()=>{
         setChildren(sidebar.find(item=> route.title === item.name))
     },[route])
@@ -23,26 +22,26 @@ function SubMain({route, type='default', title, array}) {
             for(let i=0; i<4;i++){
                 subItems.push(data.items[i])
             }
-            setSub(subItems)
+            await setSub(subItems)
         }
         loadData()
-    },[])
-    console.log(children);
+    },[route.rss])
     const handleClick = (item)=>{
         localStorage.setItem("news", JSON.stringify(item))
     }
+    console.log(sub);
     return ( 
         <div>
             {type === "default" ? (
-                <div className="sub-main mt-6">
+                <div className="sub-main my-6 ">
                     <div className="top flex">
-                        <h1 className="title left text-2xl font-bold mr-3 relative">{route.title}</h1>
+                        <h1 className="title left text-2xl font-bold mr-3 relative">{route?.title}</h1>
                         <div className="right flex flex-1 justify-end">
                             {
                                 children?.children?.map((item, index)=>{
                                     return (
                                         <div key={index} className="flex">
-                                            <Link className="px-1 mx-1 text-slate-900" to={item.path}>{item.name}</Link>
+                                            <Link className="px-1 mx-1 text-slate-900" to={item?.path}>{item?.name}</Link>
                                         </div>
                                     )
                                 })
@@ -76,7 +75,7 @@ function SubMain({route, type='default', title, array}) {
                 </div>
             </div>
             ) : (
-                <div className="sub-main mt-6">
+                <div className="sub-main my-6">
                     <div className="grid grid-cols-12 gap-6">
                         <div className="col-span-9">
                         <div className="top flex">

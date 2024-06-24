@@ -76,31 +76,37 @@ export const route = [
     path: "/nhan-ai",
     Component: Nhanai,
     title: "Nhân ái",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fnhan-ai-13.rss",
   },
   {
     path: "/the-gioi",
     Component: Thegioi,
     title: "Thế giới",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fthe-gioi-10.rss",
   },
   {
     path: "/suc-khoe",
     Component: Suckhoe,
     title: "Sức khỏe",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fsuc-khoe-9.rss",
   },
   {
     path: "video-media",
     Component: Media,
     title: "Video - Media",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fvideo-media-14.rss",
   },
   {
     path: "/van-hoa",
     Component: Vanhoa,
     title: "Văn hóa",
+    rss: " https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fvan-hoa-6.rss",
   },
   {
     path: "/the-thao",
     Component: Thethao,
     title: "Thể thao",
+    rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fthe-thao-20.rss",
   },
   {
     path: "/",

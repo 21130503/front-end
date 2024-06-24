@@ -32,12 +32,15 @@ export function useFetch(rss) {
     await setDataInLoadMore(data.items);
     await setDataShow();
   };
-  window.onload = () => {
+  window.onload = async () => {
     if (!flag) {
-      loadData();
+      await loadData();
       setFlag(true);
     }
   };
+  // useEffect(() => {
+  //   loadData();
+  // }, []);
 
   return json;
 }
