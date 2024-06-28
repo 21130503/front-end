@@ -239,16 +239,16 @@ export const route = [
     title: "Du học",
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fdu-hoc-72.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
-  {
-    path: "/guong-mat",
-    Component: Guongmat,
-    title: "Gương mặt",
-    rss: "",
-  },
-  {
-    path: "/the-chat",
-    Component: Thechat,
-    title: "Thể chất",
-    rss: "",
-  },
+  // {
+  //   path: "/guong-mat",
+  //   Component: Guongmat,
+  //   title: "Gương mặt",
+  //   rss: "",
+  // },
+  // {
+  //   path: "/the-chat",
+  //   Component: Thechat,
+  //   title: "Thể chất",
+  //   rss: "",
+  // },
 ];
