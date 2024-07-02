@@ -252,3 +252,5 @@ export const route = [
   //   rss: "",
   // },
 ];
+
+export const arrRss = route.filter((item) => item.rss);
