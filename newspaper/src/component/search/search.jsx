@@ -6,22 +6,27 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSearch } from "../../store/search";
 function Search({className}) {
     const [value, setValue] = useState("")
     const [data, setData] = useState([])
     const navigate = useNavigate()
+    const {setResults} = useSearch()
     const handleClickButtonSearch= async ()=>{
-        arrRss.forEach( async(item)=>{
-            const {data} = await axios.get(item.rss)
-            const res = [];
-            data.items.forEach((item, idx)=>{
-                if(item.title.includes(value)){
-                    res.push(data.items[idx])
-                }
+        // arrRss.forEach( async(item)=>{
+        //     const {data} = await axios.get(item.rss)
+        //     const res = [];
+        //     data.items.forEach((item, idx)=>{
+        //         if(item.title.includes(value)){
+        //             res.push(data.items[idx])
+        //         }
 
-            })
-            setData(res)
-        })
+        //     })
+        //     setData(res)
+        // })
+        navigate(`/search/${value}`)
+       
+
     }
     const handleChange = (e)=>{
         if(e.target.value.startsWith(" ")){

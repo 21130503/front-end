@@ -24,6 +24,9 @@ body {
 .w-3500 {
   width: 3500px;
 }
+.h-500 {
+  height: 500px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
