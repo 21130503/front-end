@@ -24,7 +24,7 @@ function Search({className}) {
         //     })
         //     setData(res)
         // })
-        navigate(`/search/${value}`)
+        navigate(`/search/${encodeURIComponent(value)}`)
        
 
     }

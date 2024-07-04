@@ -37,9 +37,14 @@ function SearchPage() {
             </div>)
             :
             (
-                data.map((item, index)=>{
-                    return <ContentItem item={item} key={index}/>
-                })
+               <div className="mt-6 w-1200 mx-auto">
+                    <div className="count-res text-2xl"><strong>{data.length}</strong> kết quả phù hợp</div>
+                   <div>
+                       { data.map((item, index)=>{
+                            return <ContentItem w="300px" h="202px" item={item} key={index}/>
+                        })}
+                   </div>
+               </div>
              )
      );
 }

@@ -241,7 +241,7 @@ export const route = [
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fdu-hoc-72.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
   {
-    path: "/search:key",
+    path: "/search/:key",
     Component: SearchPage,
   },
   // {
