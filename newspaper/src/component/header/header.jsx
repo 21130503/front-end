@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Header() {
- 
   return (
     <div id="header" className="w-full">
       <div className="header_top flex">
@@ -52,7 +51,7 @@ function Header() {
           <img src={logo_center} alt="Logo" />
         </div>
         <div className="logo_right">
-          <Search className={'display: flex'}/>
+          <Search className={"display: flex"} />
           <div className="image">
             <img src={logo} alt="Logo" />
           </div>
