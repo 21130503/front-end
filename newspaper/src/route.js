@@ -1,3 +1,4 @@
+import Search from "./component/search/search";
 import Anninh from "./page/anninh/anninh";
 import Bandocdieutra from "./page/bandocdieutra/bandocdieutra";
 import BonPhuong from "./page/bonphuong/bonphuong";
@@ -26,6 +27,7 @@ import Nhanai from "./page/nhanai/nhanai";
 import Phapdinh from "./page/phapdinh/phapdinh";
 import Phuongphap from "./page/phuongphap/phuongphap";
 import SangTac from "./page/sangtac/Sangtac";
+import SearchPage from "./page/search/search";
 import Suckhoe from "./page/suckhoe/suckhoe";
 import Thechat from "./page/thechat/thechat";
 import Thegioi from "./page/thegioi/thegioi";
@@ -34,7 +36,6 @@ import Thoisu from "./page/thoisu/thoisu";
 import ThoiSuXaHoi from "./page/thoisuxahoi/thoisuxahoi";
 import Traodoi from "./page/traodoi/traodoi";
 import Vanhoa from "./page/vanhoa/vanhoa";
-
 export const route = [
   {
     path: "/giao-duc",
@@ -239,6 +240,10 @@ export const route = [
     title: "Du học",
     rss: "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fgiaoducthoidai.vn%2Frss%2Fdu-hoc-72.rss&api_key=yzf7jare8f7g2tykhyn9mcbfs4rnnahrry0bme00",
   },
+  {
+    path: "/search/:key",
+    Component: SearchPage,
+  },
   // {
   //   path: "/guong-mat",
   //   Component: Guongmat,
@@ -252,3 +257,5 @@ export const route = [
   //   rss: "",
   // },
 ];
+
+export const arrRss = route.filter((item) => item.rss);
