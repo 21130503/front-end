@@ -4,6 +4,7 @@ import useStory from "../store/story-store";
 import arrayNewsHot from "../store/newshot";
 import useLoadMoreData from "../store/useLoadMoreData";
 import useWeekly from "../store/weekly-news";
+import { useLoading } from "../store/loading";
 
 export function useFetch(rss) {
   const [json, setJson] = useState(null);
@@ -12,6 +13,7 @@ export function useFetch(rss) {
   const { setArray } = arrayNewsHot();
   const { setArrayWeekly } = useWeekly();
   const { setDataInLoadMore, setDataShow } = useLoadMoreData();
+  const { setIsLoading } = useLoading();
   // console.log(typeof setDataInLoadMore);
   const newsHot = [];
   const newsWeekly = [];
@@ -31,6 +33,8 @@ export function useFetch(rss) {
     await setArrayWeekly(newsWeekly);
     await setDataInLoadMore(data.items);
     await setDataShow();
+    // Loading
+    setIsLoading(false);
   };
   window.onload = async () => {
     if (!flag) {
