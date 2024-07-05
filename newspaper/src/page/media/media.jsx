@@ -1,7 +1,7 @@
-function Media() {
-    return ( 
-        <div>Media</div>
-     );
+import Render from "../../render/render";
+
+function Media({rss}) {
+    return <Render rss={rss}/>
 }
 
 export default Media;

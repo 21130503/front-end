@@ -28,7 +28,7 @@ function SidebarItem({sidebar, className}) {
                         {
                             sidebar.children.map((item, index)=>{
                                 return (
-                                    <a key={index} className="block text-black py-1 my-1 hover:text-red-500" to={item.path}>
+                                    <a key={index} className="block text-black py-1 my-1 hover:text-red-500" href={item.path}>
                                         {
                                             item.name
                                         }

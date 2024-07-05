@@ -56,7 +56,7 @@ function NewsDetail() {
     }, [news]);
     useFetch(JSON.parse(localStorage.getItem('rss')))
     const {array} = arrayNewsHot()
-    // const {arrayWeekly} = useWeekly()
+    const {arrayWeekly} = useWeekly()
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -92,7 +92,7 @@ function NewsDetail() {
                     <SameCategory array={array}/>
                 </div>
                 <div className="weekly mt-7">
-                    {/* <Weekly data= {arrayWeekly}/>/ */}
+                    <Weekly data= {arrayWeekly}/>
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
-function Anninh() {
+import Render from "../../render/render";
+
+function Anninh({rss}) {
     return ( 
-        <div>An ninh</div>
+        <Render rss={rss}/>
      );
 }
 

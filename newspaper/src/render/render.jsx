@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import ContentItem from "../../component/content/contentItem";
-import HotEvent from "../../component/hot-event/hot-event";
-import NewsHot from "../../component/newshot/newshot";
-import Story from "../../component/story/story";
-import { useFetch } from "../../hook/fetch";
-import useLoadMoreData from "../../store/useLoadMoreData";
+import ContentItem from "../component/content/contentItem";
+import HotEvent from "../component/hot-event/hot-event";
+import NewsHot from "../component/newshot/newshot";
+import Story from "../component/story/story";
+import { useFetch } from "../hook/fetch";
+import useLoadMoreData from "../store/useLoadMoreData";
 function Render({rss}) {
     const data = useFetch(rss)
     const { dataShow} = useLoadMoreData()

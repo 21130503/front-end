@@ -1,6 +1,8 @@
-function Donghanh() {
+import Render from "../../render/render";
+
+function Donghanh({rss}) {
     return ( 
-        <div>Đồng hành</div>
+        <Render rss={rss}/>
      );
 }
 

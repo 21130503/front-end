@@ -1,7 +1,7 @@
-function ThoiSuXaHoi() {
-    return ( 
-        <div>Thời sự đô thị</div>
-     );
+import Render from "../../render/render";
+
+function ThoiSuXaHoi({rss}) {
+    return <Render rss={rss}/>
 }
 
 export default ThoiSuXaHoi;

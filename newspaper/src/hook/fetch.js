@@ -23,7 +23,7 @@ export function useFetch(rss) {
       const element = data?.items[index];
       newsHot.push(element);
     }
-    for (let index = 5; index < 10; index++) {
+    for (let index = 5; index < 9; index++) {
       const element = data?.items[index];
       newsWeekly.push(element);
     }
