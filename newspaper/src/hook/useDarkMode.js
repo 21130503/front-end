@@ -16,7 +16,7 @@ const useDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  return [isDarkMode, toggleDarkMode];
+  return [isDarkMode, toggleDarkMode]; // Đảm bảo rằng hook trả về một mảng
 };
 
 export default useDarkMode;

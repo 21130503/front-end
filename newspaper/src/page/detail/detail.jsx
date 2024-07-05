@@ -10,6 +10,12 @@ import SameCategory from "../../component/SameCategory/SameCategory";
 import Audio from "../../component/audio/audio";
 import { useFetch } from "../../hook/fetch";
 import arrayNewsHot from "../../store/newshot";
+import useWeekly from "../../store/weekly-news";
+import SubMain from "../../component/submain/submain";
+import { Link } from "react-router-dom";
+import ContentItem from "../../component/content/contentItem";
+import useStory from "../../store/story-store";
+import Weekly from "../../component/weekly/weekly";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
@@ -22,7 +28,7 @@ function NewsDetail() {
         };
 
         loadNews();
-    }, []);
+    }, [localStorage.getItem('news')]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,7 +56,7 @@ function NewsDetail() {
     }, [news]);
     useFetch(JSON.parse(localStorage.getItem('rss')))
     const {array} = arrayNewsHot()
-    console.log(array);
+    // const {arrayWeekly} = useWeekly()
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
@@ -84,6 +90,9 @@ function NewsDetail() {
                 </div>
                 <div className="news-same-category">
                     <SameCategory array={array}/>
+                </div>
+                <div className="weekly mt-7">
+                    {/* <Weekly data= {arrayWeekly}/>/ */}
                 </div>
             </div>
         </div>
