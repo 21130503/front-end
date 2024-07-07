@@ -1,6 +1,8 @@
-function Duhoc() {
+import Render from "../../render/render";
+
+function Duhoc({rss}) {
     return ( 
-        <div>Du học</div>
+        <div><Render rss={rss}/></div>
      );
 }
 

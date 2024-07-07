@@ -1,6 +1,8 @@
-function DaoTaoTuyenSinh() {
+import Render from "../../render/render";
+
+function DaoTaoTuyenSinh({rss}) {
     return ( 
-        <div>Đào tạo tuyển sinh</div>
+        <div><Render rss={rss}/></div>
      );
 }
 

@@ -1,7 +1,7 @@
-function Thegioi() {
-    return ( 
-        <div>The gioi</div>
-     );
+import Render from "../../render/render";
+
+function Thegioi({rss}) {
+    return <Render rss={rss}/>
 }
 
 export default Thegioi;
