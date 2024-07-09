@@ -12,12 +12,14 @@ import useWeekly from "../../store/weekly-news";
 import './home.scss'
 import { useLoading } from "../../store/loading";
 import Loader from "../../component/loader/loader";
+import { useNavigate } from "react-router-dom";
  function Home({rss}) {
    const data = useFetch(rss)
    const {array} = arrayNewsHot()
    const {arrayWeekly} = useWeekly()
    const [blog, setBlog] = useState([])
    const {isLoading} = useLoading()
+   const navigate = useNavigate()
    console.log(array);
    return ( 
      isLoading ? (
@@ -37,7 +39,7 @@ import Loader from "../../component/loader/loader";
             <div className="col-span-2 h-max">
 
             <img src={images.post2} alt="" />
-            <img className="mt-8" src={images.post1} alt="" />
+            <img onClick={()=>navigate('/epaper')} className="mt-8" src={images.post1} alt="" />
             </div>
         </div>
         <div className="blog-list flex mt-9 gap-4">

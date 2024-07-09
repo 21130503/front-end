@@ -16,11 +16,15 @@ import { Link } from "react-router-dom";
 import ContentItem from "../../component/content/contentItem";
 import useStory from "../../store/story-store";
 import Weekly from "../../component/weekly/weekly";
+import TextSummarizer from "../../component/sumary/textSumary";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
     const [newsContent, setNewsContent] = useState('')
     const [image, setImage] = useState('')
+    const [showSummary, setShowSummary] = useState(false)
     useEffect(() => {
         const loadNews = async () => {
             const storedNews = JSON.parse(localStorage.getItem('news'));
@@ -74,7 +78,7 @@ function NewsDetail() {
                 <p className="text-slate-600">{news?.pubDate}</p>
             </div>
             <div className="news-speak">
-                <Audio content={ newsContent}/>
+                {newsContent && <Audio content={ newsContent}/>}
             </div>
             <div className="image-news my-4">
                 <img src={image} alt="" />
@@ -95,7 +99,25 @@ function NewsDetail() {
                     <Weekly data= {arrayWeekly}/>
                 </div>
             </div>
+            
         </div>
+        <div onClick={()=>setShowSummary(true)} className="fixed h-12 w-12 btn-summary bg-yellow-300 flex items-center justify-center z-10 right-5 bottom-5" title="Tóm tắt">
+            <p>
+                <FontAwesomeIcon icon={faBook}/>
+            </p>
+        </div>
+        {
+            showSummary && (
+                <div className="flex items-center justify-center fixed top-0 bottom-0 left-0 right-0 z-40">
+                <div className="inner rounded-lg bg-slate-100 h-600 w-600 px-4 py-2">
+                    <div className="close text-right">
+                        <button onClick={()=>setShowSummary(false)} className="text-3xl text-red-500">X</button>
+                    </div>
+                    <TextSummarizer content={newsContent}/>
+                </div>
+        </div>
+            )
+        }
         </div>
      );
 }

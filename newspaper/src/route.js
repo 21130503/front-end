@@ -12,6 +12,7 @@ import DiaPhuong from "./page/diaphuong/diaphuong";
 import Donghanh from "./page/donghanh/donghanh";
 import DaoTaoTuyenSinh from "./page/dt-ts/dt-ts";
 import Duhoc from "./page/duhoc/duhoc";
+import EpaperDisplay from "./page/epaper/epaper";
 import Giaoduc from "./page/giaoduc/giaoduc";
 import Giaoducdothi from "./page/giaoducdothi/giaoducdothi";
 import Giaoducphapluat from "./page/giaoducphapluat/giaoducphapluat";
@@ -243,6 +244,10 @@ export const route = [
   {
     path: "/search/:key",
     Component: SearchPage,
+  },
+  {
+    path: "/epaper",
+    Component: EpaperDisplay,
   },
   // {
   //   path: "/guong-mat",
