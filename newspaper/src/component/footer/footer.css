@@ -1,0 +1,22 @@
+.footer {
+  background-color: #c31e40;
+  height: 308px;
+  padding-top: 68px;
+  color: white;
+}
+.footer .left {
+  margin-left: -156px;
+  padding-right: 80px;
+}
+.footer .left .image {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer .left .image .link img {
+  width: 186px;
+  height: 76px;
+}
+.footer .left .content {
+  text-align: right;
+  padding-top: 14px;
+}/*# sourceMappingURL=footer.css.map */

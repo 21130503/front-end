@@ -1,11 +1,14 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import './search.scss'
 import { arrRss, route } from "../../route";
+
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { useSearch } from "../../store/search";
 function Search({className}) {
     const [value, setValue] = useState("")
@@ -44,6 +47,7 @@ function Search({className}) {
             </div>
           </div>
      );
+
 }
 
 export default Search;

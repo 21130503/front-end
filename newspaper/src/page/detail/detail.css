@@ -1,0 +1,13 @@
+.categories {
+  border-left: 10px solid #c31e40;
+  background-color: #f5f5f5;
+}
+
+.content-detail .news-author {
+  border: 1px solid;
+  border-color: #ddd transparent;
+}
+.content-detail .news-main a {
+  font-size: 20px;
+  line-height: 1.6;
+}/*# sourceMappingURL=detail.css.map */

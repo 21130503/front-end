@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+
 function SidebarItem({sidebar, className}) {
     const [ show, setShow] = useState(false)
     return ( 
@@ -40,6 +41,7 @@ function SidebarItem({sidebar, className}) {
                 }
             </a>
      );
+
 }
 
 export default SidebarItem;

@@ -1,0 +1,18 @@
+.sub-main .top .title {
+  color: var(--primary-color);
+  top: 7px;
+}
+.sub-main .top .right {
+  border-bottom: 2px solid var(--primary-color);
+}
+.sub-main .title-news {
+  background-color: var(--primary-color);
+}
+.sub-main .body {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid;
+  border-color: transparent #eee;
+}
+.sub-main .body .item:not(:first-child) {
+  border-top: 1px solid #eee;
+}/*# sourceMappingURL=submain.css.map */

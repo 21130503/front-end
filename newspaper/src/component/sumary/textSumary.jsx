@@ -1,13 +1,16 @@
-function TextSummary({textToSummarize}) {
-  const [summary, setSummary] = useState('');
+import axios from "axios";
+import { useState } from "react";
+
+function TextSummary({ textToSummarize }) {
+  const [summary, setSummary] = useState("");
 
   const handleSubmit = () => {
     const options = {
-      method: 'POST',
-      url: 'https://api.gemini.ai/v1/summarization',
+      method: "POST",
+      url: "https://api.gemini.ai/v1/summarization",
       headers: {
         Authorization: `Bearer YOUR_API_KEY`,
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       data: {
         text: textToSummarize,
@@ -22,9 +25,7 @@ function TextSummary({textToSummarize}) {
         console.error(error);
       });
   };
-    return ( 
-        <div className="summary"></div>
-     );
+  return <div className="summary"></div>;
 }
 
 export default TextSumary;

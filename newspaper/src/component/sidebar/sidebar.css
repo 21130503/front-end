@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   background-color: var(--bg-sidebar);
+  position: sticky;
+  top: 0;
 }
 #sidebar .sidebar-inner {
   display: flex;
