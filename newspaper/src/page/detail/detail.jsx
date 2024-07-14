@@ -101,7 +101,7 @@ function NewsDetail() {
             </div>
             
         </div>
-        <div onClick={()=>setShowSummary(true)} className="fixed h-12 w-12 btn-summary bg-yellow-300 flex items-center justify-center z-10 right-5 bottom-5" title="Tóm tắt">
+        <div onClick={()=>setShowSummary(true)} className="fixed h-12 w-12 btn-summary bg-yellow-300 flex items-center justify-center z-10 right-10 bottom-10" title="Tóm tắt">
             <p>
                 <FontAwesomeIcon icon={faBook}/>
             </p>
