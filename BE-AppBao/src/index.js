@@ -40,6 +40,7 @@ if(typeof Web_AdsArticleAfterBody != 'undefined'){window.CMS_BANNER.pushAds(Web_
   );
   return content;
 }
+
 app.post("/get_article", async (req, res) => {
   const url = req.body.url;
   console.log(req.body.url);

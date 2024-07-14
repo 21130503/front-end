@@ -1,6 +1,8 @@
-function BonPhuong() {
+import Render from "../../render/render";
+
+function BonPhuong({rss}) {
     return ( 
-        <div>Bốn phương</div>
+        <Render rss={rss}/>
      );
 }
 

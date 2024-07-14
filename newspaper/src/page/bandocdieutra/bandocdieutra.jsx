@@ -1,6 +1,8 @@
-function Bandocdieutra() {
+import Render from "../../render/render";
+
+function Bandocdieutra({rss}) {
     return ( 
-        <div>Bạn đọc điều tra</div>
+        <Render rss={rss}/>
      );
 }
 
