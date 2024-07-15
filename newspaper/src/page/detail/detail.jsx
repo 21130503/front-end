@@ -19,12 +19,14 @@ import Weekly from "../../component/weekly/weekly";
 import TextSummarizer from "../../component/sumary/textSumary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { loadContent } from "../../utils/loadData";
 
 function NewsDetail() {
     const [news, setNews] = useState(null)
     const [newsContent, setNewsContent] = useState('')
     const [image, setImage] = useState('')
     const [showSummary, setShowSummary] = useState(false)
+    
     useEffect(() => {
         const loadNews = async () => {
             const storedNews = JSON.parse(localStorage.getItem('news'));
@@ -32,18 +34,19 @@ function NewsDetail() {
         };
 
         loadNews();
-        let previousDevice = localStorage.getItem('news');
 
+    }, []);
+    useEffect(() => {
         const interval = setInterval(() => {
-            const currentNews = localStorage.getItem('news');
+            const currentNews = JSON.parse(localStorage.getItem('news'));
 
-            if (currentNews !== previousDevice) {
+            if (currentNews?.title !== news?.title) {
                 setNews(currentNews);
             }
         }, 1000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [news]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -58,8 +61,8 @@ function NewsDetail() {
                             },
                         }
                     );
-                    console.log(data);
                     setNewsContent(data.content);
+                    
                 } catch (error) {
                     console.error('Error fetching article:', error);
                 }
@@ -72,6 +75,18 @@ function NewsDetail() {
     useFetch(JSON.parse(localStorage.getItem('rss')))
     const {array} = arrayNewsHot()
     const {arrayWeekly} = useWeekly()
+    // useEffect(() => {
+    //     const load = async() =>{
+    //         try {
+    //             const response = await axios.get('https://giaoducthoidai.vn/hoc-vien-phu-nu-viet-nam-cong-bo-diem-chuan-xet-tuyen-som-dot-2-post691755.html');
+    //         const html = await response.data;
+    //         console.log(html);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //     load()
+    // }, [news]);
     return ( 
         <div className="wrapper w-1200 mx-auto">
         <div className="hot-event w-full">
