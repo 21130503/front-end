@@ -32,7 +32,18 @@ function NewsDetail() {
         };
 
         loadNews();
-    }, [localStorage.getItem('news')]);
+        let previousDevice = localStorage.getItem('news');
+
+        const interval = setInterval(() => {
+            const currentNews = localStorage.getItem('news');
+
+            if (currentNews !== previousDevice) {
+                setNews(currentNews);
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {

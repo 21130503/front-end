@@ -1,0 +1,29 @@
+.footer {
+    background-color: #c31e40;
+    height: 308px;
+    padding-top: 68px;
+    color: white;
+
+    .left {
+        margin-left: -156px;
+        padding-right: 80px;
+
+
+
+        .image {
+            display: flex;
+            justify-content: flex-end;
+
+            .link img {
+                width: 186px;
+                height: 76px;
+            }
+        }
+
+        .content {
+            text-align: right;
+            padding-top: 14px;
+
+        }
+    }
+}
