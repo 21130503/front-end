@@ -47,7 +47,6 @@ function ContentItem({ item,
     const handleClick = ()=>{
         localStorage.setItem("news", JSON.stringify(item))
     }
-    console.log("Image " + img);
     return ( 
         <div onClick={handleClick} className="content-item  gap-2 w-full mt-4  mb-4" style={{display: display}}>
             <Link to={"/chi-tiet"} className="left  object-cover"  style={{display: display}}>

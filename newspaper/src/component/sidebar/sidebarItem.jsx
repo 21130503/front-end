@@ -5,15 +5,15 @@ import { Link, NavLink } from "react-router-dom";
 function SidebarItem({sidebar, className}) {
     const [ show, setShow] = useState(false)
     return ( 
-        <a 
-            href={sidebar.path} 
+        <NavLink 
+            to={sidebar.path} 
             className={`${className} text-white cursor-pointer relative`}
-            // style={({ isActive }) => {
-            //     return {
-            //       color: isActive ? "rgb(251 191 36)" : "white",
+            style={({ isActive }) => {
+                return {
+                  color: isActive ? "rgb(251 191 36)" : "white",
                   
-            //     };
-            //   }}
+                };
+              }}
               onMouseEnter={()=>{
                 if(sidebar.children){
                    setShow(true)
@@ -29,17 +29,17 @@ function SidebarItem({sidebar, className}) {
                         {
                             sidebar.children.map((item, index)=>{
                                 return (
-                                    <a key={index} className="block text-black py-1 my-1 hover:text-red-500" href={item.path}>
+                                    <Link key={index} className="block text-black py-1 my-1 hover:text-red-500" to={item.path}>
                                         {
                                             item.name
                                         }
-                                    </a>
+                                    </Link>
                                 )
                             })
                         }
                     </div>
                 }
-            </a>
+            </NavLink>
      );
 
 }

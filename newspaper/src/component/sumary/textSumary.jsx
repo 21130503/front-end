@@ -1,31 +1,44 @@
-import axios from "axios";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from 'react';
+import nlp from 'compromise';
+import Typed from 'typed.js';
 
-function TextSummary({ textToSummarize }) {
-  const [summary, setSummary] = useState("");
+const TextSummarizer = ({ content }) => {
+  const [summary, setSummary] = useState('');
+  const typedRef = useRef(null);
 
-  const handleSubmit = () => {
-    const options = {
-      method: "POST",
-      url: "https://api.gemini.ai/v1/summarization",
-      headers: {
-        Authorization: `Bearer YOUR_API_KEY`,
-        "Content-Type": "application/json",
-      },
-      data: {
-        text: textToSummarize,
-      },
-    };
-
-    axios(options)
-      .then((response) => {
-        setSummary(response.data.summary);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  const summarizeText = (text) => {
+    let doc = nlp(text);
+    let importantSentences = doc.sentences().out('array').slice(0, 2);
+    return importantSentences.join(' ');
   };
-  return <div className="summary"></div>;
-}
 
-export default TextSumary;
+  useEffect(() => {
+    const sum = summarizeText(content);
+    setSummary(sum);
+  }, [content]);
+
+  useEffect(() => {
+    if (summary) {
+      const options = {
+        strings: [summary],
+        typeSpeed: 10,
+      };
+
+      const typed = new Typed(typedRef.current, options);
+
+      // Cleanup typed instance on unmount
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, [summary]);
+
+  return (
+    <div>
+      <h2 className="text-2xl text-center py-1 font-bold">Tổng quan</h2>
+      <div className="typed-summary" ref={typedRef}></div>
+    </div>
+  );
+};
+
+export default TextSummarizer;

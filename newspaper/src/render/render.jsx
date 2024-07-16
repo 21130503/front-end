@@ -26,7 +26,7 @@ function Render({rss}) {
             <div className="hot-event w-full">
                 <HotEvent className={'w-1200 mx-auto'}/>
             </div>
-                <div className="grid grid-cols-12 gap-4 h-screen mt-6">
+                <div className="grid grid-cols-12 gap-4 mt-6">
                     
                     <div className="col-span-6">
                         <Story/>
